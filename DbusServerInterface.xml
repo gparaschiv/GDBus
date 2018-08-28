@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE node PUBLIC
+    "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+    "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd" >
+<node name="/">
+  <interface name="mysi.alarmclock">
+    <method name="setTime">
+      <arg name="currentTime" direction="in" type="t">
+        <doc:doc><doc:summary>Current time in milliseconds</doc:summary></doc:doc>
+      </arg>
+      <doc:doc>
+        <doc:description>
+          <doc:para>
+            Set current time to server.
+          </doc:para>
+        </doc:description>
+      </doc:doc>
+    </method>
+	<method name="setAlarmTime">
+      <arg name="alarmTime" direction="in" type="t">
+        <doc:doc><doc:summary>alarm time in milliseconds</doc:summary></doc:doc>
+      </arg>
+      <doc:doc>
+        <doc:description>
+          <doc:para>
+            Set alarm time to server.
+          </doc:para>
+        </doc:description>
+      </doc:doc>
+    </method>
+	<method name="getAlarmStatus">
+      <arg name="status" direction="out" type="b">
+        <doc:doc><doc:summary>alarm status</doc:summary></doc:doc>
+      </arg>
+      <doc:doc>
+        <doc:description>
+          <doc:para>
+            Get alarm status from server.
+          </doc:para>
+        </doc:description>
+      </doc:doc>
+    </method>
+	<method name="setAlarmStatus">
+      <arg name="alarmStatus" direction="in" type="b">
+        <doc:doc><doc:summary>alarm status</doc:summary></doc:doc>
+      </arg>
+      <doc:doc>
+        <doc:description>
+          <doc:para>
+            Set alarm status to server.
+          </doc:para>
+        </doc:description>
+      </doc:doc>
+    </method>
+	<signal name="ringAlarm">
+        <arg name="ringValue" type="b"/>
+    </signal>
+  </interface>
+</node>
